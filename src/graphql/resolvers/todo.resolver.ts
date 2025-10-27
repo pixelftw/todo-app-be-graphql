@@ -22,12 +22,12 @@ export const todoResolvers: Resolvers = {
       }
 
       const newTodo: Todo = {
-        id: (todos.length + 1).toString(),
+        id: new Date().toString(),
         title: args.title,
         isCompleted: false,
       };
 
-      todos.push(newTodo);
+      todos.unshift(newTodo);
 
       return newTodo;
     },
